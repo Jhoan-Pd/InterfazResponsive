@@ -50,13 +50,6 @@ export default function ExperienciaPage() {
         </motion.p>
 
         {/* Botones de navegación */}
-        <div className="flex justify-center mt-8">
-  <Link href="/" passHref>
-    <Button asChild className="bg-indigo-500 text-white rounded-xl shadow hover:bg-indigo-700 px-6 py-2">
-      <a>← Volver al inicio</a>
-    </Button>
-  </Link>
-</div>
         <div className="flex justify-center gap-4">
             <motion.div whileHover={{ scale: 1.1 }}>
                 <Link href="/" passHref>

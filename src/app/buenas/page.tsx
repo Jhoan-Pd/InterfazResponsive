@@ -2,6 +2,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function BuenasPracticasPage() {
   const practicas = [
@@ -39,7 +41,24 @@ export default function BuenasPracticasPage() {
             </motion.li>
           ))}
         </ul>
+        <div className="flex justify-center gap-4">
+            <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href="/" passHref>
+                    <Button asChild className="bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 px-6 py-2">
+                        <a>← Portada</a>
+                    </Button>
+                </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href="/experiencia" passHref>
+                    <Button asChild className="bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 px-6 py-2">
+                        <a>Siguiente →</a>
+                    </Button>
+                </Link>
+            </motion.div>
+        </div>
       </motion.div>
     </div>
+    
   );
 }

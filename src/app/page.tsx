@@ -1,11 +1,11 @@
 export default function Home() {
   const sections = [
-    { name: "Buenas prácticas", path: "/buenas" },
-    { name: "Conclusión", path: "/conclusion" },
-    { name: "Ejemplos", path: "/ejemplos" },
     { name: "Experiencia", path: "/experiencia" },
     { name: "Herramientas", path: "/herramientas" },
     { name: "Ventajas", path: "/ventajas" },
+    { name: "Buenas prácticas", path: "/buenas" },
+    { name: "Ejemplos", path: "/ejemplos" },
+    { name: "Conclusión", path: "/conclusion" },
   ];
 
   return (
@@ -13,9 +13,9 @@ export default function Home() {
       <div className="max-w-4xl text-center bg-white/70 backdrop-blur-md p-12 rounded-2xl shadow-2xl border border-indigo-100 animate-fade-in">
         {/* Imagen */}
         <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_universidad.png" 
-          alt="Logo Universidad" 
-          className="mx-auto mb-6 w-28 h-28 object-contain animate-float"
+          src="/portadaWeb.jpg" 
+          alt="Equipo de trabajo" 
+          className="mx-auto mb-10 w-60 h-80 object-cover animate-float flex items-center p-2"
         />
 
         {/* Título */}

@@ -3,6 +3,8 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle, Smartphone, Monitor, Zap } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Ventajas() {
   return (
@@ -57,7 +59,22 @@ export default function Ventajas() {
         whileHover={{ scale: 1.1 }}
         className="mt-12 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-md hover:bg-blue-700 transition-all"
       >
-        ➡️ Siguiente: Desventajas
+      <div className="flex justify-center gap-4">
+            <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href="/" passHref>
+                    <Button asChild className="bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 px-6 py-2">
+                        <a>← Portada</a>
+                    </Button>
+                </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href="/herramientas" passHref>
+                    <Button asChild className="bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 px-6 py-2">
+                        <a>Siguiente →</a>
+                    </Button>
+                </Link>
+            </motion.div>
+        </div>
       </motion.a>
     </div>
   );

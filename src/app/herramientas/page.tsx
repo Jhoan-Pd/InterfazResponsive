@@ -3,6 +3,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Smartphone, Code2, Palette, Layout } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Herramientas() {
   const tools = [

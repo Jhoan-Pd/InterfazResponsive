@@ -1,19 +1,24 @@
 import React, { forwardRef } from "react";
 
-export const Button = forwardRef<
-  HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement> & { asChild?: boolean }
->(({ children, className, asChild = false, ...props }, ref) => {
-  if (asChild) {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  asChild?: boolean;
+};
+
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, className, asChild = false, ...props }, ref) => {
+    if (asChild) {
+      return (
+        <span className={className} {...props}>
+          {children}
+        </span>
+      );
+    }
     return (
-      <span className={className} ref={ref} {...props}>
+      <button className={className} ref={ref} {...props}>
         {children}
-      </span>
+      </button>
     );
   }
-  return (
-    <button className={className} ref={ref} {...props}>
-      {children}
-    </button>
-  );
-});
+);
+
+Button.displayName = "Button";
