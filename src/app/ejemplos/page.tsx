@@ -1,77 +1,70 @@
-import { Card, CardContent } from "@/components/ui/card";
+"use client";
+
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Image from "next/image";
+import Button from "@/components/ui/button";
 
-export default function EjemplosResponsive() {
+export default function Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-10">
-      <motion.h1
-        className="text-4xl font-extrabold text-center text-blue-800 mb-10"
-        initial={{ opacity: 0, y: -30 }}
+    <main className="min-h-screen bg-stone-200 to-stone-400 flex items-center justify-center p-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white rounded-3xl shadow-sm p-6 md:p-10 max-w-5xl w-full"
       >
-        Ejemplos de Interfaces Responsive
-      </motion.h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {/* Ejemplo Desktop */}
-        <motion.div whileHover={{ scale: 1.05 }}>
-          <Card className="shadow-2xl rounded-2xl overflow-hidden">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* Lado izquierdo: tarjeta con ilustración */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-neutral-100 rounded-2xl p-6 flex items-center justify-center relative overflow-hidden"
+          >
             <Image
-              src="/ejemplo-desktop.png"
-              alt="Ejemplo en desktop"
+              src="/ejemplo.webp"
+              alt="Ilustración"
               width={400}
-              height={250}
-              className="w-full h-56 object-cover"
+              height={400}
+              className="rounded-2xl object-cover"
             />
-            <CardContent className="p-5 text-center">
-              <h2 className="text-xl font-semibold text-blue-700">Versión Desktop</h2>
-              <p className="text-gray-600 mt-2">
-                Diseños amplios, múltiples columnas y más espacio para contenido.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
+          </motion.div>
 
-        {/* Ejemplo Tablet */}
-        <motion.div whileHover={{ scale: 1.05 }}>
-          <Card className="shadow-2xl rounded-2xl overflow-hidden">
-            <Image
-              src="/ejemplo-tablet.png"
-              alt="Ejemplo en tablet"
-              width={400}
-              height={250}
-              className="w-full h-56 object-cover"
-            />
-            <CardContent className="p-5 text-center">
-              <h2 className="text-xl font-semibold text-blue-700">Versión Tablet</h2>
-              <p className="text-gray-600 mt-2">
-                Se ajustan columnas, tamaños de texto y botones más táctiles.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
+          {/* Lado derecho: contenido */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-6"
+          >
+            <h1 className="text-3xl font-bold text-gray-800">
+              Adaptabilidad
+            </h1>
+            <p className="text-gray-600 text-lg">
+              Con Tailwind podemos usar breakpoints (sm, md, lg, xl) para ajustar estilos según el tamaño de pantalla
+            </p>
 
-        {/* Ejemplo Mobile */}
-        <motion.div whileHover={{ scale: 1.05 }}>
-          <Card className="shadow-2xl rounded-2xl overflow-hidden">
-            <Image
-              src="/ejemplo-mobile.png"
-              alt="Ejemplo en móvil"
-              width={400}
-              height={250}
-              className="w-full h-56 object-cover"
-            />
-            <CardContent className="p-5 text-center">
-              <h2 className="text-xl font-semibold text-blue-700">Versión Móvil</h2>
-              <p className="text-gray-600 mt-2">
-                Contenido en una sola columna, elementos grandes y fáciles de usar.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </div>
-    </div>
+            {/* Botón animado */}
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                asChild
+                className="bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 px-6 py-2"
+              >
+                <Link href="/">← Portada</Link>
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href="/conclusion" passHref>
+                    <Button asChild className="bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 px-6 py-2">
+                        <a>Siguiente →</a>
+                    </Button>
+                </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.div>
+    </main>
   );
 }
+

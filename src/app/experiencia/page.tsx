@@ -1,18 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ExperienciaPage() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-100 p-6">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br bg-stone-200 to-stone-400 p-6">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-4xl text-center"
+        className="bg-stone-200 to-stone-400 shadow-2xl rounded-2xl p-10 w-full max-w-4xl text-center"
       >
         <motion.h1
           initial={{ scale: 0.9 }}

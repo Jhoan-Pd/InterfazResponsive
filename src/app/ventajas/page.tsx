@@ -4,11 +4,12 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Smartphone, Monitor, Zap } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
+
 
 export default function Ventajas() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100 p-10">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 bg-stone-200 to-stone-400 p-10">
       {/* Título */}
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
@@ -20,22 +21,22 @@ export default function Ventajas() {
       </motion.h1>
 
       {/* Ventajas en tarjetas */}
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl">
+      <div className="grid md:grid-cols-3 gap-8 max-w-6xl ">
         {[
           {
-            icon: <Smartphone className="w-12 h-12 text-blue-600" />,
+            icon: <Smartphone className="w-12 h-12 text-blue-600 " />,
             title: "Adaptabilidad",
-            desc: "Se ajusta automáticamente a distintos tamaños de pantalla.",
+            desc: "La capacidad del diseño responsive de ajustarse automáticamente a cualquier tamaño de pantalla (móvil, tablet, escritorio, TV).",
           },
           {
             icon: <Monitor className="w-12 h-12 text-green-600" />,
             title: "Experiencia Consistente",
-            desc: "Los usuarios disfrutan de la misma calidad en móvil y escritorio.",
+            desc: "El usuario recibe la misma calidad de experiencia sin importar el dispositivo",
           },
           {
             icon: <Zap className="w-12 h-12 text-yellow-500" />,
             title: "Eficiencia",
-            desc: "Reduce tiempos de desarrollo y mantenimiento al unificar diseño.",
+            desc: "El diseño responsive reduce tiempo y esfuerzo en el desarrollo y mantenimiento.",
           },
         ].map((item, i) => (
           <motion.div
@@ -52,30 +53,22 @@ export default function Ventajas() {
           </motion.div>
         ))}
       </div>
-
-      {/* Botón para avanzar */}
-      <motion.a
-        href="/desventajas"
-        whileHover={{ scale: 1.1 }}
-        className="mt-12 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-md hover:bg-blue-700 transition-all"
-      >
-      <div className="flex justify-center gap-4">
+       <div className="flex justify-center gap-4 mt-12">
             <motion.div whileHover={{ scale: 1.1 }}>
                 <Link href="/" passHref>
-                    <Button asChild className="bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 px-6 py-2">
+                    <Button asChild className="bg-stone-500 text-white rounded-xl shadow-lg hover:bg-indigo-700 px-6 py-2">
                         <a>← Portada</a>
                     </Button>
                 </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.1 }}>
-                <Link href="/herramientas" passHref>
-                    <Button asChild className="bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 px-6 py-2">
+                <Link href="/buenas" passHref>
+                    <Button asChild className="bg-stone-500 text-white rounded-xl shadow-lg hover:bg-purple-700 px-6 py-2">
                         <a>Siguiente →</a>
                     </Button>
                 </Link>
             </motion.div>
         </div>
-      </motion.a>
     </div>
   );
 }

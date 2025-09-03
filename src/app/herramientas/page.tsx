@@ -4,22 +4,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Smartphone, Code2, Palette, Layout } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import  Button  from "@/components/ui/button";
 
 export default function Herramientas() {
   const tools = [
     {
-      icon: <Smartphone className="w-10 h-10 text-blue-500" />,
+      icon: <Smartphone className="w-10 h-18 text-blue-500" />,
       title: "Frameworks CSS",
       desc: "Tailwind CSS, Bootstrap y Foundation facilitan la creación de diseños adaptables.",
     },
     {
-      icon: <Layout className="w-10 h-10 text-green-500" />,
+      icon: <Layout className="w-10 h-18 text-green-500" />,
       title: "Grid & Flexbox",
       desc: "Sistemas de rejilla modernos que permiten ajustar la distribución en pantallas móviles y de escritorio.",
     },
     {
-      icon: <Code2 className="w-10 h-10 text-purple-500" />,
+      icon: <Code2 className="w-10 h-18 text-purple-500" />,
       title: "Media Queries",
       desc: "CSS utiliza media queries para adaptar el diseño a diferentes resoluciones de dispositivos.",
     },
@@ -31,7 +31,8 @@ export default function Herramientas() {
   ];
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 p-6">
+    <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b bg-stone-200 to-stone-400 p-6">
+      {/* Título */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -41,6 +42,25 @@ export default function Herramientas() {
         Herramientas Clave
       </motion.h2>
 
+      {/* Botones */}
+      <div className="flex justify-center gap-4 mb-10">
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Link href="/" passHref>
+            <Button asChild className="bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 px-6 py-2">
+              <a>← Portada</a>
+            </Button>
+          </Link>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Link href="/ventajas" passHref>
+            <Button asChild className="bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 px-6 py-2">
+              <a>Siguiente →</a>
+            </Button>
+          </Link>
+        </motion.div>
+      </div>
+
+      {/* Grid con 4 herramientas */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
         {tools.map((tool, i) => (
           <motion.div

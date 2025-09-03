@@ -1,8 +1,12 @@
+"use client";
+
 import { motion } from "framer-motion";
+import Button  from "@/components/ui/button"; // 👈 cambio aquí
+import Link from "next/link";
 
 export default function Conclusiones() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 to-pink-500 p-10">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r bg-stone-200 to-stone-400 p-10">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -29,8 +33,20 @@ export default function Conclusiones() {
             <span className="text-purple-600 font-bold mr-2">✔</span>
             Contribuyen al posicionamiento SEO y al alcance de un público más amplio.
           </li>
+          <li className="flex items-start">
+            <span className="text-purple-600 font-bold mr-2">✔</span>
+            Optimiza tipografía, medios y rendimiento; valida accesibilidad.
+          </li>
         </ul>
       </motion.div>
+
+      <div className="flex justify-center gap-4 mt-12">
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Button asChild className="bg-indigo-600 text-white rounded-xl shadow-lg hover:bg-indigo-700 px-6 py-2">
+            <Link href="/">← Portada</Link>
+          </Button>
+        </motion.div>
+      </div>
     </div>
   );
 }
