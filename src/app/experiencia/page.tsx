@@ -20,7 +20,7 @@ export default function ExperienciaPage() {
           transition={{ delay: 0.2 }}
           className="text-4xl font-bold text-indigo-700 mb-6"
         >
-          Nuestra Experiencia
+         Experiencia del Usuario en Interfaces Responsive
         </motion.h1>
 
         <motion.div
@@ -44,9 +44,11 @@ export default function ExperienciaPage() {
           transition={{ delay: 0.6 }}
           className="text-lg text-gray-700 leading-relaxed mb-8"
         >
-          Contamos con una amplia trayectoria en el desarrollo de proyectos
-          académicos y profesionales, aplicando innovación, creatividad y un
-          enfoque colaborativo para generar resultados de impacto.
+        Las interfaces <span className="font-semibold text-indigo-700">responsive</span> 
+          mejoran la experiencia del usuario al adaptarse automáticamente a cualquier 
+          dispositivo. Esto permite textos legibles en pantallas pequeñas, botones fáciles 
+          de presionar y una navegación fluida sin necesidad de hacer zoom o desplazarse en exceso. 
+          Todo esto genera confianza, satisfacción y un mayor tiempo de permanencia en el sitio.
         </motion.p>
 
         {/* Botones de navegación */}

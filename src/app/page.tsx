@@ -13,7 +13,7 @@
         <div className="max-w-4xl text-center bg-stone-200 to-stone-400 backdrop-blur-md p-12 rounded-2xl shadow-2xl border border-indigo-100 animate-fade-in">
           {/* Imagen */}
           <img 
-            src="/vercel.svg" 
+            src="/portadaWeb.webp" 
             alt="Equipo de trabajo" 
             className="mx-auto mb-15 w-60 h-80 object-cover animate-float -mt-5"
           />

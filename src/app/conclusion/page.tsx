@@ -46,6 +46,13 @@ export default function Conclusiones() {
             <Link href="/">← Portada</Link>
           </Button>
         </motion.div>
+        <motion.div whileHover={{ scale: 1.1 }}>
+                <Link href="/qr" passHref>
+                    <Button asChild className="bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 px-6 py-2">
+                        <a>Siguiente →</a>
+                    </Button>
+                </Link>
+            </motion.div>
       </div>
     </div>
   );
